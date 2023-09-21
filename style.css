@@ -1,11 +1,18 @@
 .btn-retour{
+    margin-top: 20px;
     padding: 10px;
+    transition: transform 400ms;
+    width: 174px;
 }
 
 #btn-retour__link {
     padding: 10px 30px;
     margin: 0px;
     font-size: smaller;
+}
+
+.btn-retour:hover {
+    transform: rotate(10deg);
 }
 
 .container {
