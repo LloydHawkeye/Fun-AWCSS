@@ -40,7 +40,7 @@
     transform: scale(1.15);
 }
 
-.exo_ball, .exo_ball-montante, .exo-popcat, .exo-barrel-roll, .exo-load-bar {
+.exo_ball, .exo_ball-montante, .exo-popcat, .exo-barrel-roll, .exo-load-bar, .exo-3d-roll {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -129,7 +129,7 @@
     top: 33px;
 }
 
-.container__btn__barrel-roll:active + .container__ball__arwing {
+.container__btn__barrel-roll--active:focus + .container__ball__arwing {
     transform: rotate(360deg);
 }
 
