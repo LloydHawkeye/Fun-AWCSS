@@ -119,8 +119,6 @@
 .container__ball__arwing {
     width: 100px;
     height: 100px;
-    /* transition: transform 1.5s;
-    transform: rotate(0); */
 }
 
 #arwing {
@@ -130,7 +128,6 @@
 }
 
 .container__btn__barrel-roll--active:focus + .container__ball__arwing {
-    /* transform: rotate(360deg); */
     animation: barrel-roll 1.5s;
 }
 
