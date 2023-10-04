@@ -40,7 +40,7 @@
     transform: scale(1.15);
 }
 
-.exo_ball, .exo_ball-montante, .exo-popcat, .exo-barrel-roll, .exo-load-bar, .exo-3d-roll {
+.exo_ball, .exo_ball-montante, .exo-popcat, .exo-barrel-roll, .exo-load-bar, .exo-3d-roll, .exo-load-bar-keyframe {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -83,7 +83,7 @@
     box-shadow: 0px 0px 1px 0.1px black;
 }
 
-.container__btn--cursor, .exo-load-bar__btn {
+.container__btn--cursor, .exo-load-bar__btn, .exo-load-bar__btn-keyframe {
     cursor: pointer
 }
 
@@ -119,8 +119,8 @@
 .container__ball__arwing {
     width: 100px;
     height: 100px;
-    transition: transform 1.5s;
-    transform: rotate(0);
+    /* transition: transform 1.5s;
+    transform: rotate(0); */
 }
 
 #arwing {
@@ -130,7 +130,17 @@
 }
 
 .container__btn__barrel-roll--active:focus + .container__ball__arwing {
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
+    animation: barrel-roll 1.5s;
+}
+
+@keyframes barrel-roll {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .container__bar {
@@ -156,7 +166,7 @@
     transform-origin: left;
 }
 
-.container__bar__txt {
+.container__bar__txt, .container__bar__txt-keyframe {
     width: 260px;
     margin: auto;
     display: block;
@@ -171,4 +181,42 @@
     opacity: 100%;
     transform: scale(1);
 
+}
+
+.exo-load-bar, .exo-load-bar-keyframe {
+    margin: 0px 10px;
+}
+
+
+.container__bar__progress-keyframe {
+    width: 815px;
+    height: 20px;
+    background-color: rgb(3, 201, 151);
+    margin: auto;
+    transform: scaleX(0);
+    /* animation: progress-bar 5s;
+    transform-origin: left; */
+}
+
+.exo-load-bar__btn-keyframe:active + .container__bar > .container__bar__progress-keyframe {
+    animation: progress-bar 5s;
+    transform-origin: left;
+}
+
+@keyframes progress-bar {
+    0% {
+        transform: scaleX(0);
+    }
+    17% {
+        transform: scaleX(.20);
+    }
+    24% {
+        transform: scaleX(.5);
+    }
+    46% {
+        transform: scaleX(.8);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
